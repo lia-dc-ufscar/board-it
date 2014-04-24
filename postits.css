@@ -1,0 +1,72 @@
+/* CSS declarations go here */
+
+.post{
+	font-size-adjust: .58;
+}
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+.green{
+	background-color: green;
+}
+.yellow{
+	background-color: yellow;
+}
+.black{
+	background-color: black;
+}
+.white{
+	background-color: white;
+}
+
+.font-white{
+	color:white;
+}
+.font-red{
+	color:red;
+}
+.font-green{
+	color:green;
+}
+.font-blue{
+	color:blue;
+}
+.font-yellow{
+	color:yellow;
+}
+.font-black{
+	color:black;
+}
+
+.size-3x3{
+	height:9em;
+	width:9em;
+	word-wrap: break-word;
+	padding:0.5em;
+	margin:0.5em;
+}
+
+.size-3x5{
+	height:9em;
+	width:15em;
+	word-wrap: break-word;
+	padding:0.5em;
+	margin:0.5em;
+}
+.size-5x3{
+	height:15em;
+	width:9em;
+	word-wrap: break-word;
+	padding:0.5em;
+	margin:0.5em;
+}
+.size-5x5{
+	height:15em;
+	width:15em;
+	word-wrap: break-word;
+	padding:0.5em;
+	margin:0.5em;
+}
