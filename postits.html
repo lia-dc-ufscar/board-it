@@ -1,5 +1,6 @@
 <head>
   <title>The Board</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
@@ -8,7 +9,7 @@
 
 <template name="page">
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand"> The Board</a>
 			</div>
@@ -17,11 +18,14 @@
 					<li class="active"><a id="home" data-toggle="tab">Board</a></li>
 					<li><a id="list" data-toggle="tab">List of Posts</a></li>
 					<li><a id="new" data-toggle="tab">New</a></li>
+					<li><a id="newImg" data-toggle="tab">New Image</a></li>
+					<li><a id="teste" data-toggle="tab">Teste </a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="jumbotron">
+	<div class="container-fluid">
+		<br>
 		{{#if is_home}}
 			{{> screen}}
 		{{/if}}
@@ -31,92 +35,11 @@
 		{{#if is_new}}
 			{{> new_post}}
 		{{/if}}
+		{{#if is_new_image}}
+			{{> new_image}}
+		{{/if}}
+		{{#if is_teste}}
+			{{> teste}}
+		{{/if}}
 	</div>
 </template>
-
-<template name="post_list">
-	<br>
-	{{#each posts}}
-  		<ul class="list-group">
-  			{{> post_info}}
-  		</ul>
-  	{{else}}
-  		No posts yet.
-	{{/each}}
-</template>
-
-<template name="post_info">
-		<li class="list-group-item {{bgColor}} font-{{fColor}}">
-			{{content}}, by {{author}} at {{date}}
-			<button class="btn btn-danger"> Delete </button>
-		</li>
-</template>
-
-<template name="screen">
-	{{#each posts}}
-			{{> post}}
-	{{else}}
-		No posts yet.
-	{{/each}}
-</template>
-
-<template name="post">
-	<div class= "post draggable size-{{size}} {{bgColor}} font-{{fColor}}" style="top:{{posTop}}em; left: {{posLeft}}em;position:relative;">
-			<h4>{{content}}</h4>
-			<br><p font-size="1em" align="right">{{author}}</p>
-	</div>
-</template>
-
-<template name="new_post">
-	<div class="container">
-		<center>
-			<h2 align="center"><b>Create a new post</b></h2>
-			<br />
-
-			<label for="bColor">Background color:</label>
-			<select name="bColor" id="bColor">
-	  			<option value="white">white</option>
-	  			<option value="red">red</option>
-	  			<option value="blue">blue</option>
-	  			<option value="green">green</option>
-	  			<option value="yellow">yellow</option>
-	  			<option value="black">black</option>
-			</select>
-
-			<label for="fColor">Font color:</label>
-			<select name="fColor" id="fColor">
-	  			<option value="black">black</option>
-	  			<option value="red">red</option>
-	  			<option value="blue">blue</option>
-	  			<option value="green">green</option>
-	  			<option value="yellow">yellow</option>
-	  			<option value="white">white</option>
-			</select>
-			<br>
-
-			<label for="author">Author</label><br>
-			<textarea name="author" placeholder="Ex: Your Name" class="textarea" rows="1"></textarea>
-			<br>
-			<label for="content">Content</label><br>
-			<textarea name="content" class="textarea" rows="5"></textarea>
-			<br />
-
-			<label for="size">Size:</label>
-			<select name="size" id="size">
-	  			<option value="3x3">3x3</option>
-	  			<option value="3x5">3x5</option>
-	  			<option value="5x3">5x3</option>
-	  			<option value="5x5">5x5</option>
-			</select>
-			<br>
-			Position on the board:<br>
-			<label for="posTop">Top:</label>
-			<input type="number" id="posTop" name="posTop" min="1" max="30" placeholder="1">
-			<label for="posLeft">Left:</label>
-			<input type="number" id="posLeft" name="posLeft" min="1" max="30" placeholder="1">
-			<br>
-	  		<button type="button" class="btn btn-success submit"> New Post!</button>
-	  	</center>
-	</div>
-</template>
-

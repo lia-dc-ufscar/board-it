@@ -1,7 +1,11 @@
 /* CSS declarations go here */
-
+body{
+	background-color: #cccccc;
+}
 .post{
 	font-size-adjust: .58;
+	word-wrap: break-word;
+	overflow: hidden;
 }
 .red{
 	background-color: red;
@@ -42,31 +46,26 @@
 }
 
 .size-3x3{
-	height:9em;
-	width:9em;
-	word-wrap: break-word;
+	height:12em;
+	width:12em;
 	padding:0.5em;
 	margin:0.5em;
 }
 
 .size-3x5{
-	height:9em;
-	width:15em;
-	word-wrap: break-word;
-	padding:0.5em;
+	height:12em;
+	width:18em;	padding:0.5em;
 	margin:0.5em;
 }
 .size-5x3{
-	height:15em;
-	width:9em;
-	word-wrap: break-word;
+	height:18em;
+	width:12em;
 	padding:0.5em;
 	margin:0.5em;
 }
 .size-5x5{
-	height:15em;
-	width:15em;
-	word-wrap: break-word;
+	height:18em;
+	width:18em;
 	padding:0.5em;
 	margin:0.5em;
 }
