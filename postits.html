@@ -1,9 +1,13 @@
 <head>
   <title>The Board</title>
+<<<<<<< HEAD
   <link rel="stylesheet" href="/lib/jquery-ui-1.10.4.min.css">
   <script type="text/javascript" src="/lib/jquery-1.10.2.js" ></script>
   <script type="text/javascript" src="/lib/jquery-ui-1.10.4.min.js" ></script>
   <script type="text/javascript" src="/lib/jquery.ui.touch.punch.js" ></script>
+=======
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 </head>
 
 <body>
@@ -14,6 +18,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
+<<<<<<< HEAD
 				<a class="navbar-brand"> Board-it</a>
 			</div>
 			<div class="navbar-collapse collapse">
@@ -21,6 +26,16 @@
 					<li class="active"><a id="home" data-toggle="tab">Your Board</a></li>
 					<li><a id="new_post" data-toggle="tab">New Post</a></li>
 					<li><a id="list" data-toggle="tab">List of Posts</a></li>
+=======
+				<a class="navbar-brand"> The Board</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a id="home" data-toggle="tab">Board</a></li>
+					<li><a id="list" data-toggle="tab">List of Posts</a></li>
+					<li><a id="new" data-toggle="tab">New</a></li>
+					<li><a id="newImg" data-toggle="tab">New Image</a></li>
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 					<li><a id="teste" data-toggle="tab">Teste </a></li>
 				</ul>
 			</div>
@@ -29,6 +44,7 @@
 	<div class="container-fluid">
 		<br>
 		{{#if is_home}}
+<<<<<<< HEAD
 			{{> board}}
 		{{/if}}
 		{{#if is_list}}
@@ -36,6 +52,18 @@
 		{{/if}}
 		{{#if is_new}}
 			{{> new_it}}
+=======
+			{{> screen}}
+		{{/if}}
+		{{#if is_list}}
+			{{> post_list}}
+		{{/if}}
+		{{#if is_new}}
+			{{> new_post}}
+		{{/if}}
+		{{#if is_new_image}}
+			{{> new_image}}
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 		{{/if}}
 		{{#if is_teste}}
 			{{> teste}}

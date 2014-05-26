@@ -4,6 +4,7 @@ var drawing = false;
 var lastX = 0;
 var lastY = 0;
 
+<<<<<<< HEAD
 var clearCanvas = function(){
     canvas = $('#canvas')[0];
     var ctx = canvas.getContext('2d');
@@ -12,12 +13,15 @@ var clearCanvas = function(){
     console.log('cleared');    
 };
 
+=======
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 Template.teste.drawsteps = function(){
   return Drawsteps.find({}, {sort: {date: -1}});
 }
 
 Template.teste.rendered = function(){
 	drawsteps = Drawsteps.find({}, {sort: {date: -1}});
+<<<<<<< HEAD
     globalStream.on('clear', function(message){
         clearCanvas();
     });
@@ -30,12 +34,20 @@ Template.teste.rendered = function(){
 }
 Template.step.rendered = function(e){
     var canvas = $('#canvas')[0];
+=======
+}
+Template.step.rendered = function(e){
+	var canvas = $('#canvas')[0];
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 	var ctx = canvas.getContext('2d');
 	ctx.beginPath();
     ctx.moveTo(this.data.begin.x, this.data.begin.y);
     ctx.lineTo(this.data.end.x, this.data.end.y);
     ctx.stroke();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
     /*
 	debugger
 	$('.line').each(function(){
@@ -70,6 +82,7 @@ Template.teste.events = {
 	'mouseup #canvas': function(e){
 		drawing = false;
 	},
+<<<<<<< HEAD
 	'click .btn-default': function(){
 		Meteor.call('clear_canvas', function(err){
             console.log('Success!');
@@ -96,3 +109,93 @@ Template.teste.events = {
         ctx.stroke();
     }
 }
+=======
+	'click .btn-default': function(e){
+		$('#canvas2').width = $('#canvas2').width(); 
+	},
+	'mousedown #canvas2': function(e){
+		drawing = true;
+		lastX = e.pageX - e.target.offsetLeft;
+		lastY = e.pageY - e.target.offsetTop;
+	},
+	'mouseup #canvas2': function(e){
+		drawing = false;
+	},
+	'mousemove #canvas2': function(e){
+		if(!drawing)
+			return;
+		var canvas = $('#canvas2')[0];
+		var ctx = canvas.getContext('2d');
+        var x = e.pageX - e.target.offsetLeft;
+        var y = e.pageY - e.target.offsetTop;
+		ctx.beginPath();
+	    ctx.moveTo(lastX, lastY);
+	    ctx.lineTo(x, y);
+	    ctx.stroke();
+        lastX = x;
+        lastY = y;
+    }
+}
+/*
+(function() {
+    // Creates a new canvas element and appends it as a child
+    // to the parent element, and returns the reference to
+    // the newly created canvas element
+
+
+    function createCanvas(parent, width, height) {
+        var canvas = {};
+        canvas.node = document.createElement('canvas');
+        canvas.context = canvas.node.getContext('2d');
+        canvas.node.width = width || '100%';
+        canvas.node.height = height || '100%';
+        parent.appendChild(canvas.node);
+        return canvas;
+    }
+
+    function init(container, width, height, fillColor) {
+        var canvas = createCanvas(container, width, height);
+        var ctx = canvas.context;
+        // define a custom fillCircle method
+        ctx.fillCircle = function(x, y, radius, fillColor) {
+            this.fillStyle = fillColor;
+            this.beginPath();
+            this.moveTo(x, y);
+            this.arc(x, y, radius, 0, Math.PI * 2, false);
+            this.fill();
+        };
+        ctx.clearTo = function(fillColor) {
+            ctx.fillStyle = fillColor;
+            ctx.fillRect(0, 0, width, height);
+        };
+        ctx.clearTo(fillColor || "#ddd");
+
+        // bind mouse events
+        var i = 1;
+        canvas.node.onmousemove = function(e) {
+            if (!canvas.isDrawing) {
+               i = 1;
+               return;
+            }
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            var radius = 10; // or whatever
+            var fillColor = '#ff0000';
+            ctx.fillCircle(x, y, radius, fillColor);
+            i++;
+        };
+        canvas.node.onmousedown = function(e) {
+            canvas.isDrawing = true;
+        };
+        canvas.node.onmouseup = function(e) {
+            canvas.isDrawing = false;
+            alert(i);
+        };
+    }
+
+    var container = document.getElementById('canvas');
+    init(container, 200, 200, '#ddd');
+
+})();
+*/
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b

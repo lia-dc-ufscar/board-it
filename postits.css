@@ -6,7 +6,10 @@ body{
 	font-size-adjust: .58;
 	word-wrap: break-word;
 	overflow: hidden;
+<<<<<<< HEAD
 	cursor: move;
+=======
+>>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
 }
 .red{
 	background-color: red;
