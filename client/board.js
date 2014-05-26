@@ -39,3 +39,11 @@ Template.it.rendered = function(){
 		}
 	});
 }
+
+Template.board.events = {
+	'click .post': function(e){
+		console.log(e.target.id);
+		if(e.which == 1)
+			console.log('left click');
+	}
+}

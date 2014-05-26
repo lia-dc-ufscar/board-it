@@ -8,13 +8,21 @@
 
 <template name="it">
 	{{#if isText}}
-		<div id="{{_id}}" class= "post {{bgColor}}" style="color: {{fontColor}}; top:{{posTop}}px; left:{{posLeft}}px; position:absolute; height:{{height}}px; width:{{width}}px; padding: 10px">
-			<h4>{{{content}}}</h4>
-		</div>
+		{{>it_text}}
 	{{/if}}
 	{{#if isImage}}
-		<div id ="{{_id}}" class="post" style="top:{{posTop}}px;left:{{posLeft}}px; position:absolute; height:{{height}}px; width:{{width}}px;">
-			<img id ="{{_id}}" src="{{content}}" style="height:100%; width: 100%"/>
-		</div>
+		{{>it_image}}
 	{{/if}}
+</template>
+
+<template name="it_text">
+	<div id="{{_id}}" class= "post {{bgColor}}" style="color: {{fontColor}}; top:{{posTop}}px; left:{{posLeft}}px; position:absolute; height:{{height}}px; width:{{width}}px; padding: 10px; z-index: {{zIndex}}">
+		<h4>{{{content}}}</h4>
+	</div>
+</template>
+
+<template name="it_image">
+	<div id ="{{_id}}" class="post" style="top:{{posTop}}px;left:{{posLeft}}px; position:absolute; height:{{height}}px; width:{{width}}px; z-index: {{zIndex}};">
+		<img id ="{{_id}}" src="{{content}}" style="height:100%; width: 100%;"/>
+	</div>
 </template>
