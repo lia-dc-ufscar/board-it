@@ -3,11 +3,7 @@
   "dependencies": {
     "basePackages": {
       "bootstrap-3": {},
-<<<<<<< HEAD
       "streams": {}
-=======
-      "jquery-ui": {}
->>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
     },
     "packages": {
       "bootstrap-3": {
@@ -15,18 +11,10 @@
         "tag": "v3.1.1-1",
         "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
       },
-<<<<<<< HEAD
       "streams": {
         "git": "https://github.com/arunoda/meteor-streams.git",
         "tag": "v0.1.17",
         "commit": "9fcbbc9b7bf542827babc92089c19e730892a22f"
-=======
-      "jquery-ui": {
-        "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
-        "tag": "v1.9.2",
-        "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
->>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
       }
-    }
   }
 }
