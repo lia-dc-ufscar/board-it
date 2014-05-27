@@ -1,10 +1,6 @@
 {
   "packages": {
     "bootstrap-3": {},
-<<<<<<< HEAD
     "streams": {}
-=======
-    "jquery-ui": {}
->>>>>>> 4babfd60645ba558959ce843b2421d502511e92b
   }
 }
